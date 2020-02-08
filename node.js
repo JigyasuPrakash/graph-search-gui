@@ -1,10 +1,10 @@
 function Node(value) {
     this.value = value;
-    //this.x = x;
-    //this.y = y;
     this.edges = [];
     this.searched = false;
     this.parent = null;
+    this.x = -1;
+    this.y = -1;
 }
 
 Node.prototype.addEdge = function (neighbor) {
