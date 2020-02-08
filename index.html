@@ -6,28 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Graph Visualization</title>
+    <script src="./library/p5.min.js"></script>
+    <script src="./sketch.js"></script>
+    <script src="./node.js"></script>
+    <script src="./graph.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body style="background-color: grey;">
-
-    <h1>Welcome to Romania</h1>
-    <div class="row">
-    <h4>Source: <h5 id="source"></h5>
-    </h4>
-    <h4>Destination: <h5 id="destination"></h5>
-    </h4>
-    <button class="btn btn-primary" onclick="initSearching()">Start</button>
-    <button onclick="init()" class="btn btn-success">Clear</button>
-
-    </div>
-    <div class="row"> </div>
-    <canvas id="canvas" height="490" width="696" style="border:1px solid #000000;"></canvas>
-
-    <img src="./romania.png" height="490" width="670" id="map">
-    <script src="./sketch.js"></script>
+    <center>
+        <h1>Welcome to Romania</h1>
+    </center>
 </body>
 
 </html>
