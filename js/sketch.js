@@ -115,7 +115,6 @@ var path = [];
 var inPath = {};
 var maxx = 0;
 var m = -1;
-var n = -1;
 var completed = false;
 
 function draw() {
