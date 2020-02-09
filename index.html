@@ -10,20 +10,121 @@
     <script src="./js/sketch.js"></script>
     <script src="./js/node.js"></script>
     <script src="./js/graph.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+        integrity="sha256-PHcOkPmOshsMBC+vtJdVr5Mwb7r0LkSVJPlPrp/IMpU=" crossorigin="anonymous" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="shortcut icon" type="image/png" href="img/logo.png" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
 </head>
 
-<body>
-    <center>
-        <h1>Welcome to Romania</h1>
-    </center>
-    <div>
-        <button class="btn btn-primary" onclick="bfs()">Start</button>
-        <button class="btn btn-success" onclick="reset()">Reset</button>
-    </div>
+<body id="home">
+    <div id="particles-js"></div>
+    <header id="thisisnav" style="position: sticky;">
+        <ul style="padding: 0; margin: 0;">
+            <a class="wow fadeInDown w3-button" data-wow-duration="1s" data-wow-delay="0.9s"
+                href="https://itsjigyasu.me">Home</a>
+        </ul>
+    </header>
+
+    <section class="home wow fadeIn" data-wow-duration="2s" data-wow-delay="0.8s">
+        <div class="name">
+            <h1 class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.8s">Graph Searching Algorithm - GUI</h1>
+        </div>
+        </br>
+        <div class="section-info wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.3s">
+            <div class="section-title wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.2s">
+                <h4>About</h2>
+            </div>
+            <div class="row">
+                <div class="col-xl-5">
+                    <p>This project helps to visualise <b>Breadth First Search Algorithm</b> (BFS) over
+                        <b>Romania Map</b>.</p>
+                    <p>Breadth-first search (BFS) is an algorithm for traversing or searching tree or graph data
+                        structures. It starts at the tree root (or some arbitrary node of a graph, sometimes referred to
+                        as a 'search key'), and explores all of the neighbor nodes at the present depth prior to
+                        moving on to the nodes at the next depth level.</p>
+                    <p style="text-align: left; padding-left: 20px;">
+                        Front End:
+                        <br><i class="fas fa-dot-circle"></i> HTML
+                        <br><i class="fas fa-dot-circle"></i> CSS
+                    </p>
+                    <p style="text-align: left; padding-left: 20px;">
+                        Back End:
+                        <br><i class="fas fa-dot-circle"></i> Javascript
+                        <br><i class="fas fa-dot-circle"></i> p5 JS (Processing JS)
+                    </p>
+                </div>
+
+                <div class="col-xl-7">
+                    <img src="./img/demo.gif" alt="demo" style="border: 2px solid white;" width="530">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="home wow fadeIn" data-wow-duration="2s" data-wow-delay="0.8s">
+        <div class="row">
+            <div class="section-info wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.3s">
+                <div class="section-title wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.2s">
+                    <h4>Implementation</h2>
+                </div>
+                <div class="col-xl-12">
+                    <p>
+                        The Application require data of city in <b>JSON</b> format which has 3 attributes (Name, (X, Y)
+                        coordinates & Edges List). The program collectes the data of each city and processess it to
+                        create Node objects and simultaneously put each Node in a graph array.
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div id="sketch-holder" style="padding: 5px;"></div>
+                <button class="btn btn-primary" style="margin-right: 20px;" onclick="bfs()">Start</button>
+                <button class="btn btn-success" style="margin-left: 20px;" onclick="reset()">Reset</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="myfooter">
+    </section>
+
+    <!--Scripts are here-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS.load("particles-js", "js/particles.json", function () {
+            console.log("particles.json loaded..");
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script type="text/javascript">
+        new WOW().init();
+    </script>
+    <script>
+        window.onscroll = () => {
+            const nav = document.querySelector('#thisisnav');
+            if (this.scrollY <= 5) nav.className = '';
+            else nav.className = 'mynav';
+        };
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin=anonymous></script>
 </body>
 
 </html>

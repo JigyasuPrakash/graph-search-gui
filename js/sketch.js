@@ -14,7 +14,8 @@ function preload() {
 
 function setup() {
     graph = new Graph();
-    createCanvas(696, 491);
+    var canvas = createCanvas(696, 491);
+    canvas.parent('sketch-holder');
     var cities = data.cities;
 
     for (var i = 0; i < cities.length; i++) {
@@ -129,7 +130,7 @@ function draw() {
         var cx = inPath[counter].cx;
         var cy = inPath[counter].cy;
 
-        stroke(231, 84, 128)
+        stroke(255, 0, 0)
         strokeWeight(3);
         line(px, py, cx, cy);
         counter++;
@@ -205,7 +206,6 @@ function bfs() {
                 path.push(next);
                 next = next.parent;
             }
-            console.log(path)
             loop();
         }
 
