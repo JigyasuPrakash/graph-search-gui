@@ -2,7 +2,6 @@
 
 ![](https://img.shields.io/badge/Made%20with-VS%20Code-brightgreen?style=for-the-badge&logo=appveyor)
 
-[![Build Status] ] <!--Build Tag-->
 ![](https://img.shields.io/badge/Language-Javascript-brightgreen)
 ![](https://img.shields.io/badge/Framework-p5-brightgreen)
 
