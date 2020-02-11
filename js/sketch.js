@@ -1,3 +1,4 @@
+//Global Variable and collected data are here
 var data;
 var graph;
 let img;
@@ -10,6 +11,7 @@ function preload() {
     data = loadJSON('romania.json');
     img = loadImage('img/romania.png');
     noLoop();
+    createElement('h3', "Shortest BFS Path is:").parent('output');
 }
 
 function setup() {
@@ -111,6 +113,7 @@ function mouseClicked() {
     }
 }
 
+//p5 animation variable and visited coordinates are stored here
 var path = [];
 var inPath = {};
 var maxx = 0;
@@ -134,7 +137,10 @@ function draw() {
         line(px, py, cx, cy);
         counter++;
     }
-    m++;
+    if (m <= maxx) {
+        m++;
+    }
+    console.log(m + '' + maxx)
     if (m > maxx) {
         m = maxx;
         completed = true;
@@ -154,6 +160,17 @@ function draw() {
             strokeWeight(4);
             line(px, py, cx, cy);
         });
+        var j = 2;
+        //Render at DOM
+        createElement('br').parent('output');
+        createElement('h4', "1: " + path[path.length - 1].value + " (Source)").parent('output');
+        for (var i = path.length - 2; i > 0; i--) {
+            createElement('h4', j + ": " + path[i].value).parent('output');
+            j++;
+        }
+        createElement('h4', (j++) + ": " + path[0].value + " (Destination)").parent('output');
+        createElement('br').parent('output');
+        createElement('h5', "No of node visited: " + (m + 1)).parent('output');
         noLoop();
     }
 }
@@ -173,11 +190,6 @@ function bfs() {
             var current = queue.shift();
             var px = current.x;
             var py = current.y;
-            // if (current == end) {
-            //     console.log("Found " + current.value);
-            //     done();
-            //     return;
-            // }
             var edges = current.edges;
             for (var i = 0; i < edges.length; i++) {
                 var neighbor = edges[i];
