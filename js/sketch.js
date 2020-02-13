@@ -140,7 +140,6 @@ function draw() {
     if (m <= maxx) {
         m++;
     }
-    console.log(m + '' + maxx)
     if (m > maxx) {
         m = maxx;
         completed = true;
@@ -202,7 +201,6 @@ function bfs() {
                     maxx++;
                     queue.push(neighbor);
                     if (neighbor == end) {
-                        console.log("Found " + neighbor.value);
                         done();
                         return;
                     }
