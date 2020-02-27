@@ -169,7 +169,7 @@ function draw() {
         }
         createElement('h4', (j++) + ": " + path[0].value + " (Destination)").parent('output');
         createElement('br').parent('output');
-        createElement('h5', "No of node generated: " + (m + 1)).parent('output');
+        createElement('h5', "No of node(s) generated: " + (m + 1)).parent('output');
         noLoop();
     }
 }
