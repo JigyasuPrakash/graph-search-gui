@@ -122,7 +122,7 @@ var completed = false;
 
 function draw() {
 
-    frameRate(1);
+    frameRate(3);
     preDraw();
 
     var counter = 0;
